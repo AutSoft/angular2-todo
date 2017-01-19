@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../todo';
+import { TodoService } from '../todo.service';
 
 @Component({
     moduleId: module.id,
@@ -10,7 +11,7 @@ export class TodoAddComponent implements OnInit {
     @Output() add = new EventEmitter<Todo>();
     inputVisible = false;
 
-    constructor() { }
+    constructor(private todoService: TodoService) { }
 
     ngOnInit() { }
 
@@ -19,8 +20,13 @@ export class TodoAddComponent implements OnInit {
     }
 
     onEnterKeystroke(name: string) {
-        this.add.emit({name: name, isDone: false});
-        this.inputVisible = false;
+        this.todoService.postTodo({name: name, isDone: false}).subscribe(
+            todo => {
+                this.add.emit(todo);
+                this.inputVisible = false;
+            },
+            () => {}
+        );
     }
 
 }

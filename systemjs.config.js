@@ -36,6 +36,7 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                main: 'Rx.js',
                 defaultExtension: 'js'
             }
         }
