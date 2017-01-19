@@ -8,13 +8,17 @@ import { Component } from '@angular/core';
             <button class="btn btn-default" (click)="counter = counter + 1;">Click</button>
             <div>The button has been clicked {{counter}} times</div>
             <datepicker [(ngModel)]="date" [showWeeks]="showWeeks"></datepicker>
-            <todo-list></todo-list>
+            <todo-list #list></todo-list>
+            <todo-add (add)="list.todos.push($event)"></todo-add>
         </div>
     `,
     styles: [
         `
         datepicker {
             display: inline-block;
+        }
+        .container {
+            margin: 2%;
         }
     `]
 })

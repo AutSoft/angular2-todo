@@ -1,0 +1,5 @@
+<h1>Add a todo</h1>
+<div>
+    <input class="form-control" autofocus *ngIf="inputVisible" #input (keyup.enter)="onEnterKeystroke(input.value)">
+    <button class="btn btn-default" (click)="onButtonClick()">Add</button>
+</div>
