@@ -1,0 +1,6 @@
+<h1>Todos</h1>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todos; let i = index;">
+        <todo-item [(todo)]="todos[i]"></todo-item>
+    </li>
+</ul>

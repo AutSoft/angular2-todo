@@ -1,0 +1,6 @@
+<div>
+    <label [class.crossed]="todo.isDone">
+        <input type="checkbox" [checked]="todo.isDone" (change)="todoChanged($event.target.checked)">
+        {{todo.name}}
+    </label>
+</div>
