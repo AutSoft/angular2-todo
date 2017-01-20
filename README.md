@@ -1,3 +1,8 @@
+# Angular 2 Todo app 
+Simple Todo app showing the basics of Angular2.
+The project is based on the Angular QuickStart.
+
+
 # Angular QuickStart Source
 [![Build Status][travis-badge]][travis-badge-url]
 
